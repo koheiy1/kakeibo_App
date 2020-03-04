@@ -1,0 +1,12 @@
+%h2 収入科目の詳細
+= link_to edit_income_path(@income) do
+  編集
+= link_to incomes_path do
+  収入科目入力欄へ戻る
+%table
+  %tr
+    %th 名称
+    %td= @income.name
+  %tr
+    %th 説明
+    %td= @income.supplement 

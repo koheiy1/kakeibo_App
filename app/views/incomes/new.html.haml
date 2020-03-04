@@ -1,0 +1,17 @@
+%h2 収入科目登録
+= form_for @income do |form|
+  =link_to incomes_path do
+    収入科目入力欄へ戻る
+  %table
+    %tr
+      %th
+        = form.label :name, "名称"
+      %td
+        = form.text_field :name
+    %tr
+      %th
+        = form.label :supplement, "説明"
+      %td
+        = form.text_field :supplement
+      %div
+        = form.submit "収入登録"

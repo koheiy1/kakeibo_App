@@ -1,0 +1,25 @@
+- @page_title = "変動費科目一覧"
+%h2
+  = @page_title
+=link_to new_variablecost_path do
+  変動費科目登録
+- if @variablecosts.present?
+  %table
+    %thead
+      %tr
+        %th 変動費科目名
+        %th 補足
+        %th 操作
+    %tbody
+      - @variablecosts.each do |variablecost|
+        %tr
+          %td
+            = variablecost.name
+          %td
+            = variablecost.supplement
+          %td
+            = link_to "編集", [:edit, variablecost]
+            = link_to "削除", variablecost, method: :delete, data: { confirm: "削除しますか?"}
+- else
+  %p 
+    登録されている収入科目がありません。
