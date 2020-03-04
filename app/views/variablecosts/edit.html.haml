@@ -1,0 +1,17 @@
+%h2 変動費科目編集
+= form_for @variablecost do |form|
+  =link_to variablecosts_path do
+    変動費科目入力欄へ戻る
+  %table
+    %tr
+      %th
+        = form.label :name, "名称"
+      %td
+        = form.text_field :name
+    %tr
+      %th
+        = form.label :supplement, "説明"
+      %td
+        = form.text_field :supplement
+      %div
+        = form.submit "変動費編集" 

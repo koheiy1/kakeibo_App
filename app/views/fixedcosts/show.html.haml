@@ -1,0 +1,12 @@
+%h2 固定費科目の詳細
+= link_to edit_fixedcost_path(@fixedcost) do
+  編集
+= link_to fixedcosts_path do
+  固定費科目入力欄へ戻る
+%table
+  %tr
+    %th 名称
+    %td= @fixedcost.name
+  %tr
+    %th 説明
+    %td= @fixedcost.supplement

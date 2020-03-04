@@ -2,6 +2,7 @@
 
 ## incomeテーブル
 |Column|Type|Options|
+|------|----|-------|
 |name|string|null: false|
 |supplement|string||
 ### Association
@@ -9,6 +10,7 @@
 
 ## income_valueテーブル
 |Column|Type|Options|
+|------|----|-------|
 |income_id|integer|null: false, foreign_key: true|
 |year_month|date||
 |money|integer||
@@ -19,6 +21,7 @@
 
 ## fixedcostテーブル
 |Column|Type|Options|
+|------|----|-------|
 |name|string|null: false|
 |supplement|string||
 ### Association
@@ -26,6 +29,7 @@
 
 ## fixedcost_valueテーブル
 |Column|Type|Options|
+|------|----|-------|
 |fixedcost_id|integer|null: false, foreign_key: true|
 |year_month|date||
 |money|integer||
@@ -44,6 +48,7 @@
 
 ## variablecost_valueテーブル
 |Column|Type|Options|
+|------|----|-------|
 |variablecost_id|integer|null: false, foreign_key: true|
 |year_month|date||
 |money|integer||

@@ -1,0 +1,12 @@
+%h2 変動費科目の詳細
+= link_to edit_variablecost_path(@variablecost) do
+  編集
+= link_to variablecosts_path do
+  変動費科目入力欄へ戻る
+%table
+  %tr
+    %th 名称
+    %td= @variablecost.name
+  %tr
+    %th 説明
+    %td= @variablecost.supplement

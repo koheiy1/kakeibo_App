@@ -1,0 +1,25 @@
+- @page_title = "収入科目一覧"
+%h2
+  = @page_title
+=link_to new_income_path do
+  収入科目登録
+- if @incomes.present?
+  %table
+    %thead
+      %tr
+        %th 収入科目名
+        %th 補足
+        %th 操作
+    %tbody
+      - @incomes.each do |income|
+        %tr
+          %td
+            = income.name
+          %td
+            = income.supplement
+          %td
+            = link_to "編集", [:edit, income]
+            = link_to "削除", income, method: :delete, data: { confirm: "削除しますか?"}
+- else
+  %p 
+    登録されている収入科目がありません。
