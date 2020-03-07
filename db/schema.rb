@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_04_064610) do
+ActiveRecord::Schema.define(version: 2020_03_07_111100) do
+
+  create_table "fixedcost_values", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "fixedcost_id", null: false
+    t.date "year_month"
+    t.integer "value"
+    t.string "supplement"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "fixedcosts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -19,8 +28,26 @@ ActiveRecord::Schema.define(version: 2020_03_04_064610) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "income_values", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "income_id", null: false
+    t.date "year_month"
+    t.integer "value"
+    t.string "supplement"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "incomes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
+    t.string "supplement"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "variablecost_values", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "variablecost_id", null: false
+    t.date "year_month"
+    t.integer "value"
     t.string "supplement"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

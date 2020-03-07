@@ -1,0 +1,27 @@
+- @page_title = "固定費科目 データ登録"
+%h2= @page_title
+.toolbar= link_to "固定費科目データ一覧に戻る", :fixedcost_values
+= form_for(@form, url: fixedcost_values_path, method: :post) do |fb|
+  / 年月テーブル
+  %table
+    %tr
+      %th 登録年月
+      %th 名称
+      %th 金額
+      %th 備考
+    - cnt=0
+    = fb.fields_for :fixedcost_values do |f|
+      = f.hidden_field :fixedcost_id
+      %tr
+        %td
+          = f.date_select :year_month,                                       |
+            start_year: 2010, end_year: Time.current.year,                   |
+            use_month_numbers: true, discard_day: true, default: @year_month |
+        %th
+          = @fixedcosts.find(@form.fixedcost_values[cnt].fixedcost_id).name
+        %td
+          = f.text_field :value, size: 8
+          円
+        %td= f.text_field :supplement, size: 8
+        - cnt+=1
+  %div= fb.submit
