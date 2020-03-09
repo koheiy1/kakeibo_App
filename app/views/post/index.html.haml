@@ -1,28 +1,4 @@
-.post
-  %h1 
-    家計簿アプリ
-  %p  
-    家計簿アプリです
-
-  %h2 科目設定フォーマット
-  %ul 
-    %li 
-      =link_to incomes_path do
-        収入科目入力欄
-    %li 
-      =link_to fixedcosts_path do
-        固定費科目入力欄   
-    %li 
-      =link_to variablecosts_path do
-        変動費費科目入力欄
-  %h2 収支登録
-  %ul 
-    %li 
-      =link_to income_values_path do
-        収入金額登録欄
-    %li 
-      =link_to fixedcost_values_path do
-        固定費金額登録欄
-    %li 
-      =link_to variablecost_values_path do
-        変動費金額登録欄
+.wrapper
+  = render "post/header"
+  = render "post/headernav"
+  = render "post/body" 
