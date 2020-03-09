@@ -1,3 +1,7 @@
+.wrapper
+  = render "post/header"
+  - breadcrumb :variablecost_show
+  = breadcrumbs pretext: "",separator: "&rsaquo;"
 %h2 変動費科目の詳細
 = link_to edit_variablecost_path(@variablecost) do
   編集

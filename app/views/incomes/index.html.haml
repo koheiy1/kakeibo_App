@@ -1,3 +1,8 @@
+.wrapper
+  = render "post/header"
+  - breadcrumb :income_index
+  = breadcrumbs pretext: "",separator: "&rsaquo;"
+
 - @page_title = "収入科目一覧"
 %h2
   = @page_title
