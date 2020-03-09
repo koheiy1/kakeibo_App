@@ -1,3 +1,7 @@
+.wrapper
+  = render "post/header"
+  - breadcrumb :income_value_edit
+  = breadcrumbs pretext: "",separator: "&rsaquo;"
 %h2 収入科目データ修正
 = form_for @income_value do |form|
   %table

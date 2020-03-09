@@ -1,3 +1,7 @@
+.wrapper
+  = render "post/header"
+  - breadcrumb :fixedcost_value_edit
+  = breadcrumbs pretext: "",separator: "&rsaquo;"
 %h2 固定費科目データ修正
 = form_for @fixedcost_value do |form|
   %table

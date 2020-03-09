@@ -1,3 +1,8 @@
+.wrapper
+  = render "post/header"
+  - breadcrumb :variablecost_index
+  = breadcrumbs pretext: "",separator: "&rsaquo;"
+  
 - @page_title = "変動費科目一覧"
 %h2
   = @page_title

@@ -1,3 +1,7 @@
+.wrapper
+  = render "post/header"
+  - breadcrumb :income_value_index
+  = breadcrumbs pretext: "",separator: "&rsaquo;"
 - require 'active_support/core_ext/numeric/conversions'
 %h2 収入科目のデータ登録
 %p 登録年月を設定してください

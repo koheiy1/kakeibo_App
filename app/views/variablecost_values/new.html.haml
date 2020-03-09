@@ -1,3 +1,8 @@
+.wrapper
+  = render "post/header"
+  - breadcrumb :variablecost_value_new
+  = breadcrumbs pretext: "",separator: "&rsaquo;"
+
 - @page_title = "変動費科目 データ登録"
 %h2= @page_title
 .toolbar= link_to "変動費科目データ一覧に戻る", :variablecost_values
