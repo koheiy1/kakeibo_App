@@ -2,6 +2,7 @@
   = render "post/header"
   - breadcrumb :variablecost_value_edit
   = breadcrumbs pretext: "",separator: "&rsaquo;"
+#{current_user.name}さんのページ
 %h2 変動費科目データ修正
 = form_for @variablecost_value do |form|
   %table

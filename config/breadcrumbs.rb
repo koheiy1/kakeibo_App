@@ -76,7 +76,7 @@ crumb :fixedcost_value_new do
   parent :root
 end
 crumb :fixedcost_value_edit do
-  link "固定費詳細編集",　edit_fixedcost_value_path
+  link "固定費詳細編集", edit_fixedcost_value_path
   parent :root
 end
 crumb :variablecost_value_index do
@@ -88,7 +88,7 @@ crumb :variablecost_value_new do
   parent :root
 end
 crumb :variablecost_value_edit do
-  link "変動費詳細編集",　edit_variablecost_value_path
+  link "変動費詳細編集", edit_variablecost_value_path
   parent :root
 end
 

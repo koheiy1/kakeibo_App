@@ -2,7 +2,7 @@
   = render "post/header"
   - breadcrumb :income_edit
   = breadcrumbs pretext: "",separator: "&rsaquo;"
-
+#{current_user.name}さんのページ
 %h2 収入科目編集
 = form_for @income do |form|
   =link_to incomes_path do
