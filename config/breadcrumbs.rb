@@ -44,7 +44,7 @@ crumb :fixedcost_index do
 end
 
 crumb :fixedcost_new do
-  link "固定費登録",　new_fixedcost_path
+  link "固定費登録", new_fixedcost_path
   parent :root
 end
 crumb :fixedcost_edit do
