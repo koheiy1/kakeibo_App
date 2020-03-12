@@ -2,7 +2,7 @@
   = render "post/header"
   - breadcrumb :fixedcost_edit
   = breadcrumbs pretext: "",separator: "&rsaquo;"
-
+#{current_user.name}さんのページ
 %h2 固定費科目編集
 = form_for @fixedcost do |form|
   =link_to fixedcosts_path do

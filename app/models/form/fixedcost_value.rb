@@ -3,5 +3,5 @@ class Form::FixedcostValue < FixedcostValue
 	attr_accessor :fixedcost_id
 	attr_accessor :year_month
 	attr_accessor :value
-	attr_accessor :supplement
+  attr_accessor :supplement
 end 

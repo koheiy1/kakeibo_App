@@ -41,6 +41,6 @@ class VariablecostsController < ApplicationController
   end
 
   def variablecost_params
-    params.require(:variablecost).permit(:name, :supplement)
+    params.require(:variablecost).permit(:name, :supplement).merge(user_id: current_user.id)
   end
 end

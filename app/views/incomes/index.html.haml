@@ -4,6 +4,7 @@
   = breadcrumbs pretext: "",separator: "&rsaquo;"
 
 - @page_title = "収入科目一覧"
+#{current_user.name}さんのページ
 %h2
   = @page_title
 =link_to new_income_path do
@@ -17,14 +18,15 @@
         %th 操作
     %tbody
       - @incomes.each do |income|
-        %tr
-          %td
-            = income.name
-          %td
-            = income.supplement
-          %td
-            = link_to "編集", [:edit, income]
-            = link_to "削除", income, method: :delete, data: { confirm: "削除しますか?"}
+        - if user_signed_in? && current_user.id == income.user_id 
+          %tr
+            %td
+              = income.name
+            %td
+              = income.supplement
+            %td
+              = link_to "編集", [:edit, income]
+              = link_to "削除", income, method: :delete, data: { confirm: "削除しますか?"}
 - else
   %p 
     登録されている収入科目がありません。

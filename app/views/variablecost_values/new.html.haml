@@ -4,6 +4,7 @@
   = breadcrumbs pretext: "",separator: "&rsaquo;"
 
 - @page_title = "変動費科目 データ登録"
+#{current_user.name}さんのページ
 %h2= @page_title
 .toolbar= link_to "変動費科目データ一覧に戻る", :variablecost_values
 = form_for(@form, url: variablecost_values_path, method: :post) do |fb|

@@ -41,6 +41,6 @@ class FixedcostsController < ApplicationController
   end
 
   def fixedcost_params
-    params.require(:fixedcost).permit(:name, :supplement)
+    params.require(:fixedcost).permit(:name, :supplement).merge(user_id: current_user.id)
   end
 end

@@ -4,6 +4,7 @@
   = breadcrumbs pretext: "",separator: "&rsaquo;"
 
 - @page_title = "固定費科目一覧"
+#{current_user.name}さんのページ
 %h2
   = @page_title
 =link_to new_fixedcost_path do
@@ -17,14 +18,15 @@
         %th 操作
     %tbody
       - @fixedcosts.each do |fixedcost|
-        %tr
-          %td
-            = fixedcost.name
-          %td
-            = fixedcost.supplement
-          %td
-            = link_to "編集", [:edit, fixedcost]
-            = link_to "削除", fixedcost, method: :delete, data: { confirm: "削除しますか?"}
+        - if user_signed_in? && current_user.id == fixedcost.user_id 
+          %tr
+            %td
+              = fixedcost.name
+            %td
+              = fixedcost.supplement
+            %td
+              = link_to "編集", [:edit, fixedcost]
+              = link_to "削除", fixedcost, method: :delete, data: { confirm: "削除しますか?"}
 - else
   %p 
     登録されている固定費科目がありません。
