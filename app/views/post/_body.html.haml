@@ -1,7 +1,7 @@
 .body
   - if user_signed_in?
     .bodyin
-      = link_to destroy_user_session_path, method: :delete do
+      = link_to destroy_user_session_path, method: :delete, class: "ab" do
         ログアウト
     %h2
       科目設定フォーマット
@@ -26,6 +26,12 @@
       %li 
         =link_to variablecost_values_path do
           変動費詳細登録欄
+    %h2 
+      収支確認
+    %ul
+      %li 
+        =link_to balance_confirm_path do
+          収支確認画面     
   - else
     .bodyin
       = link_to new_user_session_path do
