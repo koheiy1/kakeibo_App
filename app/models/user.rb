@@ -7,4 +7,5 @@ class User < ApplicationRecord
   has_many :incomes
   has_many :fixedcosts 
   has_many :variablecosts 
+  has_many :income_values
 end

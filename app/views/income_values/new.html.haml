@@ -1,5 +1,5 @@
 .wrapper
-  = render "post/header"
+  = render "shared/header"
   - breadcrumb :income_value_new
   = breadcrumbs pretext: "",separator: "&rsaquo;"
 #{current_user.name}さんのページ
@@ -17,6 +17,7 @@
     - cnt=0
     = fb.fields_for :income_values do |f|
       = f.hidden_field :income_id
+      = f.hidden_field :user_id, value: current_user.id
       %tr
         %td
           = f.date_select :year_month,                                       |

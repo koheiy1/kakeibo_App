@@ -1,9 +1,29 @@
 .body {
   padding: 0 20px;
   line-height: 30px;
+  background-color:#eee;
+  height: calc(100vh - 150px);
   .bodyin {
     .ab{
       text-decoration: none;
+    }
+  }
+  h2 {
+    font-family: fantasy;
+    font-size: 20px;
+  }
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    li {
+      display: inline-block;
+      padding: 5px;
+      border: 1px solid red;
+      a{
+        text-decoration: none;
+        list-style: none;
+      }
     }
   }
 }

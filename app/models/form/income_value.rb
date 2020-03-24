@@ -4,4 +4,5 @@ class Form::IncomeValue < IncomeValue
 	attr_accessor :year_month
 	attr_accessor :value
 	attr_accessor :supplement
+	belongs_to :user
 end 

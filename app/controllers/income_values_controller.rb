@@ -11,7 +11,6 @@ class IncomeValuesController < ApplicationController
   def new
     year_month_day = params[:year_month] + "-01"
     @year_month = year_month_day.to_date
-
     @incomes = Income.order(created_at: :asc)
     @form = Form::IncomeForm.new
   end
@@ -31,7 +30,7 @@ class IncomeValuesController < ApplicationController
   end
 
   def income_form_params
-    params.require(:form_income_form).permit(income_values_attributes: Form::IncomeValue::REGISTRABLE_ATTRIBUTES)
+    params.require(:form_income_form).permit(income_values_attributes: Form::IncomeValue::REGISTRABLE_ATTRIBUTES).merge(user_id: current_user.id)
   end
 
   def update
