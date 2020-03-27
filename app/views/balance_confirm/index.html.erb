@@ -1,4 +1,7 @@
 <%= render "shared/header" %>
+<% breadcrumb :balance_confirm_path %>
+<%= breadcrumbs pretext: "",separator: "&rsaquo;" %>
+
 <h2>月次収支確認</h2>
  
 <%= form_tag({controller: :balance_confirm, action: :show}, {method: :post}) do %>

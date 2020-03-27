@@ -91,7 +91,10 @@ crumb :variablecost_value_edit do
   link "変動費詳細編集", edit_variablecost_value_path
   parent :root
 end
-
+crumb :balance_confirm_path do
+  link "収支確認画面", balance_confirm_path
+  parent :root
+end
 # crumb :projects do
 #   link "Projects", projects_path
 # end

@@ -1,6 +1,6 @@
 class FixedcostsController < ApplicationController
   def index
-    @fixedcosts = Fixedcost.order(created_at: :asc)
+    @fixedcosts = Fixedcost.where(user_id: current_user.id).order(created_at: :asc)
   end
 
   def new

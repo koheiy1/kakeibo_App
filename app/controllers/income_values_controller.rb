@@ -30,7 +30,7 @@ class IncomeValuesController < ApplicationController
   end
 
   def income_form_params
-    params.require(:form_income_form).permit(income_values_attributes: Form::IncomeValue::REGISTRABLE_ATTRIBUTES).merge(user_id: current_user.id)
+    params.require(:form_income_form).permit(income_values_attributes: Form::IncomeValue::REGISTRABLE_ATTRIBUTES)
   end
 
   def update

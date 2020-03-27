@@ -1,6 +1,6 @@
 class IncomesController < ApplicationController
   def index
-    @incomes = Income.order(created_at: :asc)
+    @incomes = Income.where(user_id: current_user.id).order(created_at: :asc)
   end
 
   def new

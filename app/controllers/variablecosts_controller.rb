@@ -1,6 +1,6 @@
 class VariablecostsController < ApplicationController
   def index
-    @variablecosts = Variablecost.order(created_at: :asc)
+    @variablecosts = Variablecost.where(user_id: current_user.id).order(created_at: :asc)
   end
 
   def new
