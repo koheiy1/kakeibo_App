@@ -1,5 +1,5 @@
 .wrapper
-  = render "post/header"
+  = render "shared/header"
   - breadcrumb :variablecost_index
   = breadcrumbs pretext: "",separator: "&rsaquo;"
   
@@ -18,15 +18,14 @@
         %th 操作
     %tbody
       - @variablecosts.each do |variablecost|
-        - if user_signed_in? && current_user.id == variablecost.user_id 
-          %tr
-            %td
-              = variablecost.name
-            %td
-              = variablecost.supplement
-            %td
-              = link_to "編集", [:edit, variablecost]
-              = link_to "削除", variablecost, method: :delete, data: { confirm: "削除しますか?"}
+        %tr
+          %td
+            = variablecost.name
+          %td
+            = variablecost.supplement
+          %td
+            = link_to "編集", [:edit, variablecost]
+            = link_to "削除", variablecost, method: :delete, data: { confirm: "削除しますか?"}
 - else
   %p 
     登録されている収入科目がありません。

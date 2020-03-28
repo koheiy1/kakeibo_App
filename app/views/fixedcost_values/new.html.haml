@@ -1,5 +1,5 @@
 .wrapper
-  = render "post/header"
+  = render "shared/header"
   - breadcrumb :fixedcost_value_new
   = breadcrumbs pretext: "",separator: "&rsaquo;"
 #{current_user.name}さんのページ
@@ -29,4 +29,4 @@
           円
         %td= f.text_field :supplement, size: 8
         - cnt+=1
-  %div= fb.submit
+  %div= fb.submit　"登録"

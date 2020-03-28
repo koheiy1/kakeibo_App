@@ -1,5 +1,5 @@
 .wrapper
-  = render "post/header"
+  = render "shared/header"
   - breadcrumb :fixedcost_index
   = breadcrumbs pretext: "",separator: "&rsaquo;"
 
@@ -18,15 +18,14 @@
         %th 操作
     %tbody
       - @fixedcosts.each do |fixedcost|
-        - if user_signed_in? && current_user.id == fixedcost.user_id 
-          %tr
-            %td
-              = fixedcost.name
-            %td
-              = fixedcost.supplement
-            %td
-              = link_to "編集", [:edit, fixedcost]
-              = link_to "削除", fixedcost, method: :delete, data: { confirm: "削除しますか?"}
+        %tr
+          %td
+            = fixedcost.name
+          %td
+            = fixedcost.supplement
+          %td
+            = link_to "編集", [:edit, fixedcost]
+            = link_to "削除", fixedcost, method: :delete, data: { confirm: "削除しますか?"}
 - else
   %p 
     登録されている固定費科目がありません。

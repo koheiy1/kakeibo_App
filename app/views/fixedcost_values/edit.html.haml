@@ -1,5 +1,5 @@
 .wrapper
-  = render "post/header"
+  = render "shared/header"
   - breadcrumb :fixedcost_value_edit
   = breadcrumbs pretext: "",separator: "&rsaquo;"
 #{current_user.name}さんのページ
@@ -18,4 +18,4 @@
       %th= @fixedcost.name
       %td= form.text_field :value
       %td= form.text_field :supplement
-  %div= form.submit
+  %div= form.submit "編集"
