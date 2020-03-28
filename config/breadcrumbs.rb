@@ -1,6 +1,3 @@
-crumb :root do
-  link "Home", root_path
-end
 
 crumb :root do
   link "トップページ", root_path
